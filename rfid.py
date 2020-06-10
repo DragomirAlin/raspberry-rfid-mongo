@@ -62,7 +62,7 @@ try:
                 print("Acces OK!")
                 #print("Card UID: "+str(uid[0])+"."+str(uid[1])+"."+str(uid[2])+"."+str(uid[3]))
                 x = datetime.datetime.now()
-                mydict = { "uid": str(uid[0])+"."+str(uid[1])+"."+str(uid[2])+"."+str(uid[3]), "nume" : w["nume"], "data" : x }
+                mydict = { "uid": str(uid[0])+"."+str(uid[1])+"."+str(uid[2])+"."+str(uid[3]), "nume" : w["nume"], "data" : x.strftime("%d.%m %H:%M") }
                 x = mylog.insert_one(mydict)
                 print(len(w))
                 GPIO.output(3, True)
