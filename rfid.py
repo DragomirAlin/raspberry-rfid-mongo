@@ -23,7 +23,7 @@ myuser = mydb["user"]
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3, GPIO.OUT)
 pwm=GPIO.PWM(3, 50)
-pwm.start(7)
+pwm.start(1)
 
 
 # Create an object of the class MFRC522
@@ -66,10 +66,10 @@ try:
                 x = mylog.insert_one(mydict)
                 print(len(w))
                 GPIO.output(3, True)
-                pwm.ChangeDutyCycle(2)
+                pwm.ChangeDutyCycle(7)
                 time.sleep(5)
                 GPIO.output(3, True)
-                pwm.ChangeDutyCycle(7)
+                pwm.ChangeDutyCycle(1)
                
             else:
                 print("Acces Neautorizat!")
